@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>海外遗珍 - 漂泊的它</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/overseas.css">
+</head>
+<body>
+    <header class="forum-header">
+        <a href="index.html" class="home-btn">返回首页</a>
+        <h1>海外遗珍</h1>
+        <p>漂泊海外的中国文物</p>
+    </header>
+
+    <main class="gallery-container">
+        <!-- 智能瀑布流文物卡片 -->
+        <div class="artifact-grid">
+            <!-- 卡片将通过JS动态加载 -->
+        </div>
+
+        <!-- 文物焦点模式弹窗 -->
+        <div class="artifact-modal">
+            <div class="modal-content">
+                <div class="artifact-slideshow">
+                    <!-- 多角度文物图片轮播 -->
+                    <div class="angle-controls">
+                        <button class="angle-prev">←</button>
+                        <button class="angle-next">→</button>
+                    </div>
+                </div>
+                <div class="artifact-details">
+                    <h2 class="artifact-title"></h2>
+                    <div class="magnifier-container">
+                        <div class="magnifier-glass"></div>
+                    </div>
+                    <div class="artifact-meta">
+                        <div class="meta-basic">
+                            <span class="meta-era"></span>
+                            <span class="meta-material"></span>
+                            <span class="meta-size"></span>
+                        </div>
+                        <button class="meta-toggle">▼</button>
+                        <div class="meta-full" style="display:none">
+                            <p class="artifact-description"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="close-modal">×</button>
+        </div>
+    </main>
+
+    <aside class="sidebar">
+        <!-- 热门话题 -->
+        <div class="hot-topics">
+            <h3>热门话题</h3>
+            <ul>
+                <li><a href="forum.html?topic=大英博物馆">大英博物馆中国馆</a></li>
+                <li><a href="forum.html?topic=文物追索">流失文物追索</a></li>
+                <li><a href="forum.html?topic=私人收藏">海外私人收藏</a></li>
+                <li><a href="forum.html?topic=拍卖市场">国际拍卖市场</a></li>
+                <li><a href="forum.html?topic=文物修复">海外修复技术</a></li>
+            </ul>
+        </div>
+    </aside>
+
+    <script src="js/overseas.js"></script>
+</body>
+</html>

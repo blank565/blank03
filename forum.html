@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文物论坛 - 博物馆互动平台</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="preconnect" crossorigin>
+    <link rel="preload" href="css/forum.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/forum.css"></noscript>
+    <script src="https://cdn.jsdelivr.net/combine/npm/three@0.132.2/build/three.min.js,npm/three@0.132.2/examples/js/controls/OrbitControls.min.js,npm/three@0.132.2/examples/js/Detector.js" defer></script>
+</head>
+<body>
+    <!-- 论坛头部 -->
+    <header class="forum-header">
+        <a href="index.html" class="home-btn">返回首页</a>
+        <h1>文物交流论坛</h1>
+        <p>欢迎所有文物爱好者交流分享</p>
+    </header>
+
+    <!-- 论坛主体 -->
+    <div class="forum-container">
+        <!-- 侧边栏 -->
+        <aside class="forum-sidebar">
+            <div class="era-nav">
+                <h3>历史时期</h3>
+                <div class="era-list">
+                    <button class="era active" data-default>全部</button>
+                    <button class="era">商周</button>
+                    <button class="era">秦汉</button>
+                    <button class="era">唐宋</button>
+                    <button class="era">明清</button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- 主内容区 -->
+        <main class="forum-main">
+            <!-- 话题筛选区 -->
+            <section class="topic-filter">
+            </section>
+
+            <!-- 发帖区 -->
+            <section class="post-form-section">
+                <div class="bamboo-scroll">
+                    <form class="post-form">
+                        <div class="form-group">
+                            <label for="post-title">帖子标题 *</label>
+                            <input type="text" id="post-title" placeholder="请输入帖子标题" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="era-select">历史时期 *</label>
+                            <select id="era-select" required>
+                                <option value="">--请选择--</option>
+                                <option value="商周">商周时期</option>
+                                <option value="秦汉">秦汉时期</option>
+                                <option value="唐宋">唐宋时期</option>
+                                <option value="明清">明清时期</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>话题标签</label>
+                            <div class="tag-options">
+                                <label><input type="checkbox" name="tags" value="文物回归"> 文物回归</label>
+                                <label><input type="checkbox" name="tags" value="鉴定技巧"> 鉴定技巧</label>
+                                <label><input type="checkbox" name="tags" value="展览信息"> 展览信息</label>
+                                <label><input type="checkbox" name="tags" value="修复技术"> 修复技术</label>
+                                <label><input type="checkbox" name="tags" value="收藏故事"> 收藏故事</label>
+                                <label><input type="checkbox" name="tags" value="学术讨论"> 学术讨论</label>
+                            </div>
+                        </div>
+                        <textarea placeholder="分享你对这件文物的看法..."></textarea>
+                        <button type="submit" class="submit-btn">发布</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- 帖子流 -->
+            <section class="posts-stream">
+                <!-- 示例帖子1 -->
+                <article class="post">
+                    <header>
+                        <h3>青铜鼎的纹饰解析</h3>
+                        <div>
+                            <span class="author">考古学者</span>
+                            <span class="dynasty">商周</span>
+                        </div>
+                    </header>
+                    <div class="content">
+                        <p>这件青铜鼎上的饕餮纹是商代青铜器的典型特征。饕餮纹通常由两个对称的夔龙纹组成，中间以鼻梁为界。这种纹饰不仅具有装饰作用，还反映了商代人的宗教信仰和宇宙观。</p>
+                    </div>
+                    <footer>
+                        <button class="like-btn">👍 点赞 (24)</button>
+                        <button class="bookmark-btn">⭐ 收藏</button>
+                    </footer>
+                </article>
+
+                <!-- 示例帖子2 -->
+                <article class="post">
+                    <header>
+                        <h3>关于青铜器的铸造工艺</h3>
+                        <div>
+                            <span class="author">文物修复师</span>
+                            <span class="dynasty">商周</span>
+                        </div>
+                    </header>
+                    <div class="content">
+                        <p>商代青铜器采用范铸法制作，先制作泥模，再翻制外范和内范，最后浇铸铜液。这件鼎的器壁均匀，纹饰清晰，说明当时的铸造技术已经相当成熟。</p>
+                    </div>
+                    <footer>
+                        <button class="like-btn">👍 点赞 (18)</button>
+                        <button class="bookmark-btn">⭐ 收藏</button>
+                    </footer>
+                </article>
+
+                <!-- 示例帖子3 -->
+                <article class="post">
+                    <header>
+                        <h3>鼎在古代礼仪中的作用</h3>
+                        <div>
+                            <span class="author">历史研究者</span>
+                            <span class="dynasty">商周</span>
+                        </div>
+                    </header>
+                    <div class="content">
+                        <p>鼎最初是炊具，后来成为重要的礼器。在商周时期，鼎的数量和规格直接反映了使用者的身份等级。天子用九鼎，诸侯七鼎，大夫五鼎，士三鼎，这就是所谓的"列鼎制度"。</p>
+                    </div>
+                    <footer>
+                        <button class="like-btn liked">👍 点赞 (32)</button>
+                        <button class="bookmark-btn bookmarked">⭐ 收藏</button>
+                    </footer>
+                </article>
+
+            </section>
+
+                <!-- 示例帖子4 - 宋代瓷器 -->
+                <article class="post">
+                    <header>
+                        <h3>宋代瓷器鉴赏</h3>
+                        <div>
+                            <span class="author">瓷器收藏家</span>
+                            <span class="dynasty">唐宋</span>
+                        </div>
+                    </header>
+                    <div class="content">
+                        <img src="images/judge-good.png.jpg" alt="宋代瓷器" class="post-image" loading="lazy">
+                        <p>唐宋瓷器以青瓷著称，釉色温润如玉，造型简洁大方。这件瓷器展现了唐宋瓷器高超的制作工艺和独特的审美风格。</p>
+                    </div>
+                    <footer>
+                        <button class="like-btn">👍 点赞 (23)</button>
+                        <button class="bookmark-btn">⭐ 收藏</button>
+                    </footer>
+                </article>
+
+                <!-- 示例帖子5 - 明代书画 -->
+                <article class="post">
+                    <header>
+                        <h3>明代山水画赏析</h3>
+                        <div>
+                            <span class="author">艺术研究员</span>
+                            <span class="dynasty">明清</span>
+                        </div>
+                    </header>
+                    <div class="content">
+                        <img src="images/british-museum.png" alt="明代山水画" class="post-image" loading="lazy">
+                        <p>这幅明清山水画笔法细腻，构图严谨，体现了文人画的精髓。画面中的山石、树木、流水都展现了画家高超的技艺和深厚的文化底蕴。</p>
+                    </div>
+                    <footer>
+                        <button class="like-btn">👍 点赞 (8)</button>
+                        <button class="bookmark-btn">⭐ 收藏</button>
+                    </footer>
+                </article>
+            </section>
+        </main>
+    </div>
+
+    <!-- 引入论坛JS -->
+    <script src="js/forum.js"></script>
+</body>
+</html>

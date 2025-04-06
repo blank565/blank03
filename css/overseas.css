@@ -1,0 +1,237 @@
+/* 论坛头部样式 */
+.forum-header {
+    background: rgba(26, 26, 26, 0.9);
+    border-bottom: 1px solid #C5A467;
+    padding: 2rem 0;
+    text-align: center;
+    position: relative;
+}
+
+.forum-header h1 {
+    color: #C5A467;
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.forum-header p {
+    color: #E0E0E0;
+    margin: 0.5rem 0 0;
+    font-size: 1.2rem;
+}
+
+/* 返回按钮样式 */
+.home-btn {
+    position: absolute;
+    left: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(197, 164, 103, 0.2);
+    color: #C5A467;
+    border: 1px solid #C5A467;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.home-btn:hover {
+    background: rgba(197, 164, 103, 0.4);
+}
+
+/* 海外遗珍页面样式 */
+.gallery-container {
+    padding: 2rem;
+    background-color: #1A1A1A;
+    min-height: 100vh;
+}
+
+/* 智能瀑布流布局 */
+.artifact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-rows: minmax(300px, auto);
+    gap: 2rem;
+    padding: 1rem;
+}
+
+/* 文物卡片基础样式 */
+.artifact-card {
+    position: relative;
+    min-height: 400px;
+    background: rgba(197, 164, 103, 0.1);
+    border: 1px solid #C5A467;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 文物卡片悬停效果 */
+.artifact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(197, 164, 103, 0.3);
+}
+
+/* 文物卡片背景纹理 */
+.artifact-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.1;
+    transition: opacity 0.3s ease;
+}
+
+.artifact-card:hover::before {
+    opacity: 0.3;
+}
+
+/* 青铜器专属效果 */
+.artifact-card[data-type="bronze"]::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url(../images/bronze-texture.png);
+    mask-image: radial-gradient(circle, transparent 60%, black 100%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.artifact-card[data-type="bronze"]:hover::after {
+    opacity: 0.2;
+}
+
+/* 瓷器专属效果 */
+.artifact-card[data-type="porcelain"]::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 50%);
+    mix-blend-mode: screen;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.artifact-card[data-type="porcelain"]:hover::after {
+    opacity: 0.3;
+}
+
+/* 焦点模式弹窗 */
+.artifact-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(26, 26, 26, 0.85);
+    display: none;
+    z-index: 1000;
+}
+
+.modal-content {
+    display: flex;
+    height: 100%;
+}
+
+.artifact-slideshow {
+    width: 60%;
+    background: #0A0A0A;
+}
+
+.artifact-drawing {
+    width: 40%;
+    background: #1A1A1A;
+    padding: 2rem;
+}
+
+/* 绘图工具样式 */
+.drawing-tools {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.brush-btn {
+    background: #2E5266;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.brush-btn:hover {
+    background: #C5A467;
+}
+
+/* 侧边栏样式 */
+.sidebar {
+    position: fixed;
+    right: 20px;
+    top: 120px;
+    width: 240px;
+    background: rgba(26, 26, 26, 0.9);
+    border: 1px solid #C5A467;
+    border-radius: 4px;
+    padding: 15px;
+    z-index: 100;
+}
+
+.hot-topics h3 {
+    color: #C5A467;
+    font-size: 18px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #C5A467;
+    padding-bottom: 8px;
+}
+
+.hot-topics ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.hot-topics li {
+    margin-bottom: 8px;
+}
+
+.hot-topics a {
+    color: #E0E0E0;
+    text-decoration: none;
+    transition: color 0.2s;
+    display: block;
+    padding: 4px 0;
+}
+
+.hot-topics a:hover {
+    color: #C5A467;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .modal-content {
+        flex-direction: column;
+    }
+    .artifact-slideshow,
+    .artifact-drawing {
+        width: 100%;
+    }
+    .sidebar {
+        position: static;
+        width: auto;
+        margin: 20px;
+    }
+}

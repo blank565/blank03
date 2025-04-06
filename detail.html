@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文物详情 - 知乎</title>
+    <link rel="stylesheet" href="css/detail.css">
+</head>
+<body>
+    <div class="zhihu-container">
+        <!-- 知乎顶部导航 -->
+        <nav class="zhihu-nav">
+            <div class="nav-left">
+                <a href="index.html" class="logo">知乎</a>
+                <a href="forum.html" class="nav-item">首页</a>
+                <a href="#" class="nav-item">发现</a>
+                <a href="#" class="nav-item">等你来答</a>
+            </div>
+            <div class="nav-right">
+                <div class="search-box">
+                    <input type="text" placeholder="搜索文物...">
+                </div>
+                <a href="#" class="user-avatar">
+                    <img src="images/user-avatar.jpg" alt="用户头像">
+                </a>
+            </div>
+        </nav>
+
+        <a href="index.html" class="back-btn">← 返回首页</a>
+
+        <div class="zhihu-main">
+            <!-- 主内容区 -->
+            <div class="content-container">
+                <!-- 单个文物详情 -->
+                <article class="question-article">
+                    <h1 id="relic-title" class="question-title">青铜器：商代四羊方尊</h1>
+                    
+                    <div class="author-info">
+                        <img id="relic-avatar" src="images/user-avatar.jpg" alt="作者头像">
+                        <div class="author-meta">
+                            <span id="relic-author" class="author-name">青铜器专家</span>
+                            <span id="relic-dynasty" class="author-bio">商朝文物研究员</span>
+                        </div>
+                    </div>
+
+                    <div class="article-content">
+                        <div id="relic-content" class="content-text">
+                            四羊方尊是中国现存商代青铜方尊中最大的一件，1938年出土于湖南宁乡县。尊高58.3厘米，重34.5公斤，造型雄奇，肩部四角是四个卷角羊头，尊腹即为羊的前胸，羊腿则附于高圈足上。整个器物用块范法浇铸，一气呵成，显示了高超的铸造水平。
+                        </div>
+                        <div class="content-image">
+                            <img id="relic-image" src="images/british-museum.png" alt="四羊方尊">
+                        </div>
+                    </div>
+
+                    <div class="article-actions">
+                        <button class="vote-btn upvote">
+                            <span>▲</span>
+                            <span class="vote-count">1.2k</span>
+                        </button>
+                        <button class="vote-btn downvote">
+                            <span>▼</span>
+                        </button>
+                        <button class="action-btn">收藏</button>
+                        <button class="action-btn">分享</button>
+                        <button class="action-btn">感谢</button>
+                        <button class="action-btn">...</button>
+                    </div>
+                </article>
+
+                <!-- 评论区域 -->
+                <div class="comment-section">
+                    <div class="comment-header">
+                        <h3>评论</h3>
+                        <div class="comment-sort">
+                            <span class="active">按时间排序</span>
+                            <span>按热度排序</span>
+                        </div>
+                    </div>
+
+                    <div id="comments-container" class="comments-container">
+                        <!-- 专家评论 -->
+                        <div class="comment-item">
+                            <div class="comment-author">
+                                <img src="images/user-avatar.jpg" alt="专家头像">
+                                <div class="author-info">
+                                    <span class="author-name">文物鉴定专家</span>
+                                    <span class="author-bio">故宫博物院研究员</span>
+                                </div>
+                            </div>
+                            <div class="comment-content">
+                                这件四羊方尊的铸造工艺代表了商代青铜器的巅峰水平，特别是羊头的卷角处理非常精细，体现了当时工匠高超的技艺。建议关注其底部铭文，对研究商代祭祀文化有重要价值。
+                            </div>
+                            <div class="comment-actions">
+                                <span class="comment-time">2小时前</span>
+                                <span class="comment-like">▲ 124</span>
+                                <span class="comment-reply">回复</span>
+                            </div>
+                        </div>
+
+                        <!-- 普通用户评论 -->
+                        <div class="comment-item">
+                            <div class="comment-author">
+                                <img src="images/user-avatar.jpg" alt="用户头像">
+                                <div class="author-info">
+                                    <span class="author-name">历史爱好者</span>
+                                    <span class="author-bio">业余考古爱好者</span>
+                                </div>
+                            </div>
+                            <div class="comment-content">
+                                去年在国博见过实物，比想象中要小一些，但做工真的精美！导览员说这件文物曾经被炸成碎片，是后来修复的，完全看不出来修复痕迹，太神奇了！
+                            </div>
+                            <div class="comment-actions">
+                                <span class="comment-time">5小时前</span>
+                                <span class="comment-like">▲ 89</span>
+                                <span class="comment-reply">回复</span>
+                            </div>
+                        </div>
+
+                        <!-- 争议性评论 -->
+                        <div class="comment-item">
+                            <div class="comment-author">
+                                <img src="images/user-avatar.jpg" alt="用户头像">
+                                <div class="author-info">
+                                    <span class="author-name">质疑一切</span>
+                                    <span class="author-bio">新用户</span>
+                                </div>
+                            </div>
+                            <div class="comment-content">
+                                真的确定这是真品吗？感觉做工太完美了，不太像三千多年前的东西。有没有可能后世仿制的？
+                            </div>
+                            <div class="comment-actions">
+                                <span class="comment-time">1天前</span>
+                                <span class="comment-like">▲ 32</span>
+                                <span class="comment-dislike">▼ 15</span>
+                                <span class="comment-reply">回复</span>
+                            </div>
+                            
+                            <!-- 回复评论 -->
+                            <div class="comment-reply-item">
+                                <div class="comment-author">
+                                    <img src="images/user-avatar.jpg" alt="用户头像">
+                                    <div class="author-info">
+                                        <span class="author-name">青铜器爱好者</span>
+                                    </div>
+                                </div>
+                                <div class="comment-content">
+                                    这个问题早有定论啦，经过碳14检测和铸造工艺分析，确认为商代真品无疑。建议先看看相关学术论文再发表意见哦~
+                                </div>
+                                <div class="comment-actions">
+                                    <span class="comment-time">20小时前</span>
+                                    <span class="comment-like">▲ 56</span>
+                                    <span class="comment-reply">回复</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="comment-editor">
+                        <div class="editor-header">
+                            <img src="images/user-avatar.jpg" alt="用户头像">
+                            <span>写下你的评论...</span>
+                        </div>
+                        <form class="comment-form">
+                            <textarea placeholder="文明社会，理性发言..."></textarea>
+                            <div class="editor-footer">
+                                <button type="submit" class="submit-btn">发布</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 侧边栏 -->
+            <div class="sidebar">
+                <div class="sidebar-block">
+                    <h3>相关问题</h3>
+                    <ul class="related-questions">
+                        <li><a href="#">如何评价这件文物的历史价值？</a></li>
+                        <li><a href="#">这件文物背后有哪些有趣的故事？</a></li>
+                        <li><a href="#">参观这件文物有哪些注意事项？</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/detail.js"></script>
+</body>
+</html>

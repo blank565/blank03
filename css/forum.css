@@ -1,0 +1,377 @@
+/* 论坛页面样式 - 深色主题 */
+body {
+    font-family: 'Noto Serif SC', serif;
+    background-color: #1A1A1A;
+    color: #E0E0E0;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* 历史时期导航 */
+.era-nav {
+    margin-bottom: 2rem;
+}
+
+.era-nav h3 {
+    color: #C5A467;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #C5A467;
+    padding-bottom: 0.5rem;
+}
+
+.era-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.era {
+    padding: 0.5rem 1rem;
+    color: #E0E0E0;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+    background: rgba(197, 164, 103, 0.1);
+    border: 1px solid transparent;
+    border-radius: 4px;
+    text-align: left;
+}
+
+.era:hover, .era.active {
+    color: #C5A467;
+    background: rgba(197, 164, 103, 0.2);
+    border-color: #C5A467;
+}
+
+
+.era-filter h3 {
+    color: #C5A467;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #C5A467;
+    padding-bottom: 0.5rem;
+}
+
+/* 论坛头部 */
+.forum-header {
+    background: rgba(26, 26, 26, 0.9);
+    border-bottom: 1px solid #C5A467;
+    padding: 2rem 0;
+    text-align: center;
+    position: relative;
+}
+
+.home-btn {
+    position: absolute;
+    left: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(197, 164, 103, 0.2);
+    color: #C5A467;
+    border: 1px solid #C5A467;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.2s ease-out, color 0.2s ease-out, border-color 0.2s ease-out;
+}
+
+.home-btn:hover {
+    background: rgba(197, 164, 103, 0.4);
+}
+
+.forum-header h1 {
+    color: #C5A467;
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.forum-header p {
+    color: #E0E0E0;
+    margin: 0.5rem 0 0;
+    font-size: 1.2rem;
+}
+
+/* 论坛容器 */
+.forum-container {
+     display: flex;
+    max-width: 1200px;
+    margin: 2rem auto;
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+/* 侧边栏 */
+.forum-sidebar {
+    width: 250px;
+    background: rgba(197, 164, 103, 0.1);
+    border: 1px solid #C5A467;
+    border-radius: 4px;
+    padding: 1.5rem;
+}
+
+.tag-container {
+    width: 30%;
+    margin-bottom: 20px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 4px 8px;
+    background: rgba(197, 164, 103, 0.2);
+    border-radius: 12px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: #E0E0E0;
+    border: 1px solid #C5A467;
+}
+
+.tag:hover {
+    background: rgba(197, 164, 103, 0.4);
+}
+
+.tag.active {
+    background: #C5A467;
+    color: #1A1A1A;
+}
+
+/* 话题筛选区 */
+.topic-filter {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    background: rgba(197, 164, 103, 0.1);
+    border: 1px solid #C5A467;
+    border-radius: 4px;
+    padding: 1.5rem;
+}
+
+.era-filter, .tag-container {
+    flex: 1;
+}
+
+.era-filter h3, .tag-container h3 {
+    color: #C5A467;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #C5A467;
+    padding-bottom: 0.5rem;
+}
+
+/* 主内容区 */
+.forum-main {
+    flex: 1;
+    min-width: 0;
+    max-width: 900px;
+    margin-right: 2rem;
+}
+
+/* 发帖区 */
+.post-form-section {
+    margin-bottom: 1.5rem;
+}
+
+.bamboo-scroll {
+    background: rgba(26, 26, 26, 0.8);
+    border: 1px solid #C5A467;
+    border-radius: 4px;
+    padding: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    color: #C5A467;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.form-group select {
+    width: 100%;
+    padding: 0.5rem;
+    background: rgba(26, 26, 26, 0.8);
+    border: 1px solid #C5A467;
+    color: #E0E0E0;
+    border-radius: 4px;
+}
+
+.tag-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.tag-options label {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: #E0E0E0;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.tag-options input[type="checkbox"] {
+    accent-color: #C5A467;
+}
+
+.post-form textarea {
+    width: 100%;
+    max-width: 700px;
+    min-height: 120px;
+    background: rgba(26, 26, 26, 0.8);
+    border: 1px solid #C5A467;
+    color: #E0E0E0;
+    padding: 1rem;
+    margin: 0 auto 1rem;
+    display: block;
+    resize: vertical;
+}
+
+#post-title {
+    width: 100%;
+    padding: 0.5rem;
+    background: rgba(26, 26, 26, 0.8);
+    border: 1px solid #C5A467;
+    color: #E0E0E0;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+
+.submit-btn {
+    background: #C5A467;
+    color: #1A1A1A;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease-out;
+}
+
+.submit-btn:hover {
+    background: #E0C086;
+}
+
+/* 帖子流 */
+.post {
+    background: rgba(26, 26, 26, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(197, 164, 103, 0.3);
+}
+
+
+.post header {
+    margin-bottom: 1rem;
+}
+
+.post h3 {
+    color: #C5A467;
+    margin: 0 0 0.3rem 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.author {
+    color: #E0E0E0;
+    font-size: 0.9rem;
+}
+
+.dynasty {
+    background: #C5A467;
+    color: #1A1A1A;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+}
+
+.post .content {
+    margin-bottom: 1rem;
+}
+
+.post-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(197, 164, 103, 0.3);
+}
+
+.post footer {
+    display: flex;
+    gap: 1rem;
+}
+
+.like-btn, .bookmark-btn {
+    background: rgba(197, 164, 103, 0.1);
+    border: 1px solid #C5A467;
+    color: #C5A467;
+    padding: 0.3rem 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease-out, border-color 0.2s ease-out, color 0.2s ease-out;
+    border-radius: 4px;
+}
+
+.delete-btn {
+    background: rgba(197, 164, 103, 0.1);
+    border: 1px solid #C5A467;
+    color: #C5A467;
+    padding: 0.3rem 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease-out, border-color 0.2s ease-out, color 0.2s ease-out;
+    border-radius: 4px;
+}
+
+.like-btn:hover, .bookmark-btn:hover, .delete-btn:hover {
+    background: rgba(197, 164, 103, 0.3);
+}
+
+.like-btn.liked, .bookmark-btn.bookmarked {
+    background: #C5A467;
+    color: #1A1A1A;
+    box-shadow: 0 0 10px rgba(197, 164, 103, 0.8);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+.like-btn.liked::after {
+    content: " ❤️";
+    color: #1A1A1A;
+}
+
+.bookmark-btn.bookmarked::after {
+    content: " ★";
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .forum-container {
+        flex-direction: column;
+    }
+    
+    .forum-sidebar {
+        width: auto;
+    }
+    
+    .topic-filter {
+        flex-direction: column;
+    }
+    
+    .tag-container, .era-filter {
+        width: 100%;
+    }
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>创意互动角 - 博物馆互动平台</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/creative.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 页面头部 -->
+    <header class="forum-header">
+        <a href="index.html" class="home-btn">返回首页</a>
+        <h1>创意互动角</h1>
+        <p>体验文物创作乐趣</p>
+    </header>
+
+    <div class="forum-container">
+        <!-- 主工作区 -->
+        <div class="workspace">
+            <!-- 创作工具面板 -->
+            <div class="tool-panel">
+                <div class="tool-header">
+                    <h2>创作工具</h2>
+                    <div class="oxidation-control">
+                        <span>氧化程度</span>
+                        <input type="range" min="0" max="100" value="0" class="oxidation-slider">
+                    </div>
+                </div>
+                <div class="tool-icons">
+                    <div class="tool-icon" data-tool="pattern">
+                        <div class="icon-shape taotie"></div>
+                        <span>纹样提取</span>
+                    </div>
+                    <div class="tool-icon" data-tool="material">
+                        <div class="icon-shape pottery"></div>
+                        <span>材质模拟</span>
+                    </div>
+                    <div class="tool-icon" data-tool="ar">
+                        <div class="icon-shape frame"></div>
+                        <span>AR投影</span>
+                    </div>
+                </div>
+                <div class="color-picker">
+                    <div class="color-option blue-white" data-color="blue"></div>
+                    <div class="color-option tang-tri" data-color="tang"></div>
+                    <div class="color-option bronze" data-color="bronze"></div>
+                </div>
+            </div>
+
+            <!-- 实时预览区 -->
+            <div class="preview-area">
+                <canvas id="creative-canvas"></canvas>
+                <button class="ar-button">AR模式</button>
+            </div>
+        </div>
+
+        <!-- 作品展示墙 -->
+        <div class="gallery-wall">
+            <h2>作品展示</h2>
+            <div class="artwork-tiles">
+                <!-- 动态加载用户作品 -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/creative.js"></script>
+</body>
+</html>

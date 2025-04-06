@@ -1,0 +1,314 @@
+/* 全局样式 */
+:root {
+    --primary-color: #1A1A1A;
+    --secondary-color: #E5C687;
+    --text-color: #E5C687;
+    --bronze-color: #639A6A;
+    --porcelain-color: #3E6276;
+    --scroll-color: #DF9E65;
+    --highlight-color: #F8F3E6;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Source Han Serif CN", "思源宋体", serif;
+    background-color: var(--primary-color);
+    color: #F0D9A0;
+    overflow-x: hidden;
+}
+
+.main-container {
+    width: 100vw;
+    height: 100vh;
+}
+
+/* 首屏样式 */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../images/british-museum.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    overflow: hidden;
+    z-index: 1;
+}
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(26, 26, 26, 0.6);
+    z-index: 2;
+}
+.title-container {
+    text-align: center;
+    z-index: 1000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem;
+    width: 90%;
+    pointer-events: none;
+    animation: none !important;
+    opacity: 1 !important;
+    transition: none !important;
+}
+
+.main-title {
+    font-family: "HYShangWeiShouShu", "汉仪尚巍手书", cursive;
+    font-size: 4.5rem;
+    color: #F0D9A0;  /* 更亮的金色 */
+    margin: 0;
+    text-shadow: 
+    0 0 10px rgba(240, 217, 160, 0.9),
+    0 0 20px rgba(240, 217, 160, 0.7),
+    0 0 30px rgba(240, 217, 160, 0.5),
+    0 0 40px rgba(240, 217, 160, 0.3);
+    letter-spacing: 0.1em;
+    z-index: 1000;
+    position: relative;
+    padding: 0.5rem 2rem;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 2rem;
+    letter-spacing: 0.5rem;
+    color: #F0D9A0;  /* 与主标题相同的金色 */
+    text-shadow: 
+        0 0 10px rgba(240, 217, 160, 0.9),
+        0 0 20px rgba(240, 217, 160, 0.7);
+    opacity: 1;
+    font-weight: 400;
+    z-index: 100;
+    position: relative;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+
+/* 导航栏样式 */
+.nav-artifacts {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    z-index: 1000;
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    background: rgba(26, 26, 26, 0.8);
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+body:hover .nav-artifacts {
+    opacity: 1;
+}
+
+.artifact,
+.artifact:hover,
+.artifact:active,
+.artifact:focus,
+.artifact:visited,
+.artifact-inner,
+.artifact-inner:hover,
+.artifact-inner:active,
+.artifact-inner:focus,
+.artifact-inner:visited {
+    font-family: "HYShangWeiShouShu", "汉仪尚巍手书", cursive;
+    font-size: 1.5rem;
+    color: #F0D9A0 !important;
+    text-decoration: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+}
+
+.artifact::after,
+.artifact::before,
+.artifact-inner::after,
+.artifact-inner::before {
+    content: none !important;
+    display: none !important;
+}
+
+.nav-link:hover,
+.artifact-inner:hover {
+    color: #F0D9A0 !important;
+    text-shadow: 0 0 10px rgba(240, 217, 160, 0.5);
+}
+
+@media (max-height: 800px) {
+    .title-container {
+        width: 95%;
+    }
+    .main-title {
+        font-size: 3.5rem;
+    }
+    .subtitle {
+        font-size: 1.5rem;
+        color: #F0D9A0;
+    }
+    .nav-artifacts {
+        gap: 1rem;
+    }
+    .nav-link {
+        font-size: 1.2rem;
+    }
+}
+
+
+/* 动画 */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* 文物详情页统一样式 */
+.artifact-detail-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: rgba(26, 26, 26, 0.7);
+    border: 1px solid var(--secondary-color);
+    border-radius: 10px;
+}
+
+.artifact-title {
+    font-family: "HYShangWeiShouShu", "汉仪尚巍手书", cursive;
+    font-size: 3rem;
+    color: var(--secondary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 10px rgba(229, 198, 135, 0.5);
+}
+
+.artifact-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.artifact-image {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    height: 400px;
+    background-color: rgba(229, 198, 135, 0.1);
+    border: 1px solid var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.artifact-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.artifact-description {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+    color: var(--highlight-color);
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.back-button {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.5rem 1.5rem;
+    background-color: rgba(229, 198, 135, 0.2);
+    color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: rgba(229, 198, 135, 0.4);
+    transform: translateY(-2px);
+}
+
+/* 彩蛋特效 */
+.inscription-effect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "HYShangWeiShouShu", "汉仪尚巍手书", cursive;
+    font-size: 8rem;
+    color: var(--secondary-color);
+    background-color: rgba(10, 10, 10, 0.9);
+    z-index: 100;
+    animation: flashIn 0.3s ease-out;
+}
+
+@keyframes flashIn {
+    0% { opacity: 0; transform: scale(0.5); }
+    50% { opacity: 1; transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+@keyframes glow {
+    0% { text-shadow: 0 0 10px rgba(229, 198, 135, 0.8); }
+    50% { text-shadow: 0 0 20px rgba(229, 198, 135, 0.9), 0 0 30px rgba(229, 198, 135, 0.5); }
+    100% { text-shadow: 0 0 10px rgba(229, 198, 135, 0.8); }
+}
+
+/* 文物纹样投射效果 */
+.artifact:hover::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.bronze:hover::after {
+    opacity: 0;
+}
+
+.porcelain:hover::after {
+    background-image: url('../images/porcelain-pattern.png');
+    opacity: 0.7;
+}
+
+.scroll:hover::after {
+    background-image: url('../images/scroll-pattern.png');
+    opacity: 0.7;
+}
